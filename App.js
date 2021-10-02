@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View } from "react-native";
+import { Text, View, LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./components/HomeComponent";
@@ -14,12 +14,13 @@ import {
   faLaughBeam,
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
-import { LogBox } from "react-native";
+import About from "./components/AboutComponent";
 // Ignore log notification by message:
 LogBox.ignoreLogs(["Warning: ..."]);
 
 // Ignore all log notifications:
 LogBox.ignoreAllLogs();
+
 function HomeScreen() {
   return (
     <View
@@ -51,18 +52,7 @@ function PurchaseScreen() {
 }
 
 function AboutScreen() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#232323",
-      }}
-    >
-      <Text>About!</Text>
-    </View>
-  );
+  return <About />;
 }
 
 function WinnersScreen() {
@@ -94,19 +84,19 @@ function MyTabs() {
 
             if (route.name === "My Lucky Numbers") {
               iconName = focused ? faCheckSquare : faLaughBeam;
-              color = focused ? "#FF2626" : "black";
+              color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
             } else if (route.name === "Home") {
               iconName = focused ? faCheckSquare : faHome;
-              color = focused ? "#FF2626" : "black";
+              color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
             } else if (route.name === "About") {
               iconName = focused ? faCheckSquare : faQuestionCircle;
-              color = focused ? "#FF2626" : "black";
+              color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
             } else if (route.name === "Winners") {
               iconName = focused ? faCheckSquare : faTrophy;
-              color = focused ? "#FF2626" : "black";
+              color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
             }
 
@@ -118,7 +108,7 @@ function MyTabs() {
           },
 
           tabBarInactiveTintColor: "gray",
-          tabBarActiveTintColor: "#FF2626",
+          tabBarActiveTintColor: "#CE1212",
         })}
       >
         <Tab.Screen name="My Lucky Numbers" component={PurchaseScreen} />
