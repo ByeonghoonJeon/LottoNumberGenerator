@@ -27,7 +27,7 @@ function HomeScreen() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#2B2B2B",
+        backgroundColor: "#232323",
       }}
     >
       <Home />
@@ -57,7 +57,7 @@ function AboutScreen() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#2B2B2B",
+        backgroundColor: "#232323",
       }}
     >
       <Text>About!</Text>
@@ -72,7 +72,7 @@ function WinnersScreen() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#2B2B2B",
+        backgroundColor: "#232323",
       }}
     >
       <Text>Winners!</Text>

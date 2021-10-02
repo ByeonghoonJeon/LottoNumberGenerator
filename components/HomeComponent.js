@@ -1,17 +1,41 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView } from "react-native";
-import { Card } from "react-native-elements";
+import { Card, ListItem, Button, Icon } from "react-native-elements";
 import { HISTORY } from "../shared/numberHistory.js";
 import * as Animatable from "react-native-animatable";
 
 function RenderItem({ item }) {
   if (item) {
     return (
-      <Card featuredTitle={item.round} image={item.basicImage}>
-        <Text style={{ margin: 10 }}>
-          {item.number1},{item.number2},{item.number3},{item.number4},
-          {item.number},{item.number2}+{item.bonusNumber}
+      <Card
+        containerStyle={{
+          backgroundColor: "#2B2B2B",
+          borderColor: "#2B2B2B",
+          shadowColor: "black",
+        }}
+      >
+        <Card.FeaturedTitle style={{ textAlign: "center" }}>
+          제 {item.round}회차 당첨번호
+        </Card.FeaturedTitle>
+        <Card.FeaturedSubtitle style={{ marginLeft: "auto" }}>
+          {item.date}
+        </Card.FeaturedSubtitle>
+        <Card.Divider />
+        <Card.Image source={require("../assets/goldbars.jpg")}></Card.Image>
+        <Text style={{ marginBottom: 10, marginTop: 10, color: "white" }}>
+          The idea with React Native Elements is more about component structure
+          than actual design.
         </Text>
+        <Button
+          icon={<Icon name="code" color="#ffffff" />}
+          buttonStyle={{
+            borderRadius: 0,
+            marginLeft: 0,
+            marginRight: 0,
+            marginBottom: 0,
+          }}
+          title="VIEW NOW"
+        />
       </Card>
     );
   }
@@ -35,7 +59,23 @@ class Home extends Component {
       <ScrollView>
         <Animatable.View animation="fadeInRightBig" duration={1000}>
           <RenderItem
-            item={this.state.history[this.state.history.length - 1]}
+            item={this.state.history[0]}
+            onPress={() => this.props.navigation.navigate("Contact")}
+          />
+          <RenderItem
+            item={this.state.history[1]}
+            onPress={() => this.props.navigation.navigate("Contact")}
+          />
+          <RenderItem
+            item={this.state.history[2]}
+            onPress={() => this.props.navigation.navigate("Contact")}
+          />
+          <RenderItem
+            item={this.state.history[3]}
+            onPress={() => this.props.navigation.navigate("Contact")}
+          />
+          <RenderItem
+            item={this.state.history[4]}
             onPress={() => this.props.navigation.navigate("Contact")}
           />
         </Animatable.View>
