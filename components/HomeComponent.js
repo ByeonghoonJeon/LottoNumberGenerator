@@ -4,11 +4,11 @@ import { Card, ListItem, Button, Icon } from "react-native-elements";
 import { HISTORY } from "../shared/numberHistory.js";
 import * as Animatable from "react-native-animatable";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import About from "./AboutComponent.js";
 
 function RenderItem({ item }) {
-  let iconName = faLock;
+  let iconName = faLockOpen;
   if (item) {
     let img;
     if (item.round % 5 == 1) {
