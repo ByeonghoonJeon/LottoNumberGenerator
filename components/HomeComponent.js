@@ -5,7 +5,6 @@ import { HISTORY } from "../shared/numberHistory.js";
 import * as Animatable from "react-native-animatable";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLockOpen } from "@fortawesome/free-solid-svg-icons";
-import About from "./AboutComponent.js";
 
 function RenderItem({ item, onPress }) {
   let iconName = faLockOpen;
@@ -91,27 +90,32 @@ class Home extends Component {
           <RenderItem
             item={this.state.history[0]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("사주 로또란?")}
+            onPress={() => this.props.navigation.navigate("Numbers")}
+            keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[1]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("About")}
+            onPress={() => this.props.navigation.navigate("Numbers")}
+            keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[2]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("About")}
+            onPress={() => this.props.navigation.navigate("Numbers")}
+            keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[3]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("About")}
+            onPress={() => this.props.navigation.navigate("Numbers")}
+            keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[4]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("About")}
+            onPress={() => this.props.navigation.navigate("Numbers")}
+            keyExtractor={(item) => item.id.toString()}
           />
         </Animatable.View>
       </ScrollView>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { View, Text, ScrollView } from "react-native";
-import { Card, ListItem, Button, Icon } from "react-native-elements";
+import { Text, ScrollView } from "react-native";
+import { Card, Button, Icon } from "react-native-elements";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faLockOpen, faFire } from "@fortawesome/free-solid-svg-icons";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
 import * as Animatable from "react-native-animatable";
 
 class About extends Component {

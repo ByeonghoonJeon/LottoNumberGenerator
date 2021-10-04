@@ -15,6 +15,8 @@ import {
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
 import About from "./components/AboutComponent";
+import Numbers from "./components/NumbersComponent";
+
 // Ignore log notification by message:
 LogBox.ignoreLogs(["Warning: ..."]);
 
@@ -77,6 +79,21 @@ function WinnersScreen() {
       }}
     >
       <Text>Winners!</Text>
+    </View>
+  );
+}
+
+function NumbersScreen(props) {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#232323",
+      }}
+    >
+      <Numbers {...props} />
     </View>
   );
 }
