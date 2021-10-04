@@ -143,6 +143,7 @@ function MyTabs() {
         <Tab.Screen name="사주로또" component={HomeScreen} />
         <Tab.Screen name="사주 로또란?" component={AboutScreen} />
         <Tab.Screen name="당첨현황" component={WinnersScreen} />
+        <Tab.Screen name="Numbers" component={NumbersScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
