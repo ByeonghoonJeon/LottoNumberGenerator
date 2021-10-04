@@ -21,7 +21,7 @@ LogBox.ignoreLogs(["Warning: ..."]);
 // Ignore all log notifications:
 LogBox.ignoreAllLogs();
 
-function HomeScreen() {
+function HomeScreen(props) {
   return (
     <View
       style={{
@@ -31,12 +31,12 @@ function HomeScreen() {
         backgroundColor: "#232323",
       }}
     >
-      <Home />
+      <Home {...props} />
     </View>
   );
 }
 
-function PurchaseScreen() {
+function PurchaseScreen(props) {
   return (
     <View
       style={{
@@ -51,8 +51,19 @@ function PurchaseScreen() {
   );
 }
 
-function AboutScreen() {
-  return <About />;
+function AboutScreen(props) {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#232323",
+      }}
+    >
+      <About {...props} />
+    </View>
+  );
 }
 
 function WinnersScreen() {
@@ -82,19 +93,19 @@ function MyTabs() {
             let color;
             let size;
 
-            if (route.name === "My Lucky Numbers") {
+            if (route.name === "나만의 번호") {
               iconName = focused ? faCheckSquare : faLaughBeam;
               color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
-            } else if (route.name === "Home") {
+            } else if (route.name === "사주로또") {
               iconName = focused ? faCheckSquare : faHome;
               color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
-            } else if (route.name === "About") {
+            } else if (route.name === "사주 로또란?") {
               iconName = focused ? faCheckSquare : faQuestionCircle;
               color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
-            } else if (route.name === "Winners") {
+            } else if (route.name === "당첨현황") {
               iconName = focused ? faCheckSquare : faTrophy;
               color = focused ? "#CE1212" : "black";
               size = focused ? 25 : 20;
@@ -107,14 +118,14 @@ function MyTabs() {
             );
           },
 
-          tabBarInactiveTintColor: "gray",
+          tabBarInactiveTintColor: "grey",
           tabBarActiveTintColor: "#CE1212",
         })}
       >
-        <Tab.Screen name="My Lucky Numbers" component={PurchaseScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="About" component={AboutScreen} />
-        <Tab.Screen name="Winners" component={WinnersScreen} />
+        <Tab.Screen name="나만의 번호" component={PurchaseScreen} />
+        <Tab.Screen name="사주로또" component={HomeScreen} />
+        <Tab.Screen name="사주 로또란?" component={AboutScreen} />
+        <Tab.Screen name="당첨현황" component={WinnersScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

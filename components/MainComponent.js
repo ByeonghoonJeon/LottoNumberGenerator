@@ -24,9 +24,9 @@ const HomeNavigator = createStackNavigator(
   }
 );
 
-const MainNavigator = createDrawerNavigator(
+const PurchaseNavigator = createDrawerNavigator(
   {
-    MyChef: { screen: HomeNavigator },
+    Purchase: { screen: PurchaseScreen },
   },
   {
     drawerBackgroundColor: "#F8F0DF",
