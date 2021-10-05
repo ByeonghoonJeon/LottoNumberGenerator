@@ -95,31 +95,31 @@ class Home extends Component {
           <RenderItem
             item={this.state.history[0]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("Numbers")}
+            onPress={() => this.props.navigation.navigate("Numbers", { id: 0 })}
             keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[1]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("Numbers")}
+            onPress={() => this.props.navigation.navigate("Numbers", { id: 1 })}
             keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[2]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("Numbers")}
+            onPress={() => this.props.navigation.navigate("Numbers", { id: 2 })}
             keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[3]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("Numbers")}
+            onPress={() => this.props.navigation.navigate("Numbers", { id: 3 })}
             keyExtractor={(item) => item.id.toString()}
           />
           <RenderItem
             item={this.state.history[4]}
             navigation={this.props.navigation}
-            onPress={() => this.props.navigation.navigate("Numbers")}
+            onPress={() => this.props.navigation.navigate("Numbers", { id: 4 })}
             keyExtractor={(item) => item.id.toString()}
           />
         </Animatable.View>
