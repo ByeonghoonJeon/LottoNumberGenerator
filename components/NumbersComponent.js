@@ -3,37 +3,35 @@ import { View, Text, ScrollView, FlatList } from "react-native";
 import { Card, ListItem, Button, Icon, Image } from "react-native-elements";
 import { HISTORY } from "../shared/numberHistory.js";
 import * as Animatable from "react-native-animatable";
+import { inlineStyles } from "react-native-svg";
 
 function RenderItem({ item }) {
+  let numberImage1;
+
   if (item) {
     return (
-      <Card
-        containerStyle={{
-          backgroundColor: "#2B2B2B",
-          borderColor: "#2B2B2B",
-          shadowColor: "black",
-        }}
-      >
-        <Card.FeaturedTitle style={{ textAlign: "center" }}>
-          제 {item.round}회차 당첨번호
-        </Card.FeaturedTitle>
-        <Card.FeaturedSubtitle style={{ marginLeft: "auto" }}>
-          {item.date}
-        </Card.FeaturedSubtitle>
-        <Card.Divider />
-        {/* <Card.Image
-          source={require(`${img1}`)}
-          style={{ width: 80, height: 80, resizeMode: "contain" }}
-        /> */}
+      <View>
+        <Card
+          containerStyle={{
+            backgroundColor: "#2B2B2B",
+            borderColor: "#2B2B2B",
+            shadowColor: "black",
+          }}
+        >
+          <Card.FeaturedTitle style={{ textAlign: "center" }}>
+            제 {item.round}회차 당첨번호
+          </Card.FeaturedTitle>
+          <Card.FeaturedSubtitle style={{ marginLeft: "auto" }}>
+            {item.date}
+          </Card.FeaturedSubtitle>
 
-        <Text style={{ marginBottom: 10, marginTop: 10, color: "white" }}>
-          {" "}
-          제 {item.round}회차 당첨번호를 알아보세요. 보너스 번호는{" "}
-          {item.bonusNumber}이며, 나머지 번호들은 {item.number1}, {item.number2}
-          , {item.number3}
-          ..
-        </Text>
-      </Card>
+          <Card.Divider />
+          <Card.Image
+            source={require("../assets/number1.png")}
+            style={{ width: 60, height: 60 }}
+          />
+        </Card>
+      </View>
     );
   }
   return <View />;

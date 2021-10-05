@@ -21,6 +21,10 @@ function RenderItem({ item, onPress }) {
     } else {
       img = require("../assets/ruby.jpg");
     }
+    // let numberImage;
+    // item.number1 == 5
+    //   ? (numberImage = require("../assets/number5.png"))
+    //   : (numberImage = require("../assets/number40.png"));
     return (
       <Card
         containerStyle={{
@@ -57,6 +61,7 @@ function RenderItem({ item, onPress }) {
           title="  전체 번호 확인하기"
           onPress={onPress}
         />
+        {/* <Card.Image source={numberImage} style={{ width: 50, height: 50 }} /> */}
       </Card>
     );
   }
