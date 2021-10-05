@@ -3,11 +3,9 @@ import { Text, View, LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./components/HomeComponent";
-import { ScrollView } from "react-native-gesture-handler";
+
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
-  faCoffee,
-  faSquare,
   faQuestionCircle,
   faCheckSquare,
   faHome,
@@ -83,24 +81,9 @@ function WinnersScreen() {
   );
 }
 
-function NumbersScreen(props) {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#232323",
-      }}
-    >
-      <Numbers {...props} />
-    </View>
-  );
-}
-
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+function HomeTabs() {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -113,7 +96,7 @@ function MyTabs() {
             if (route.name === "나만의 번호") {
               iconName = focused ? faCheckSquare : faLaughBeam;
               color = focused ? "#CE1212" : "black";
-              size = focused ? 25 : 20;
+              size = focused ? 25 : 30;
             } else if (route.name === "사주로또") {
               iconName = focused ? faCheckSquare : faHome;
               color = focused ? "#CE1212" : "black";
@@ -139,16 +122,15 @@ function MyTabs() {
           tabBarActiveTintColor: "#CE1212",
         })}
       >
-        <Tab.Screen name="나만의 번호" component={PurchaseScreen} />
         <Tab.Screen name="사주로또" component={HomeScreen} />
         <Tab.Screen name="사주 로또란?" component={AboutScreen} />
+        <Tab.Screen name="나만의 번호" component={PurchaseScreen} />
         <Tab.Screen name="당첨현황" component={WinnersScreen} />
-        <Tab.Screen name="Numbers" component={NumbersScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
 
 export default function App() {
-  return <MyTabs />;
+  return <HomeTabs />;
 }
