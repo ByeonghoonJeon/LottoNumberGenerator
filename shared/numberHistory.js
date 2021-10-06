@@ -1,5 +1,17 @@
 export let HISTORY = [
   {
+    id: 982,
+    round: 983,
+    date: "2021-10-02",
+    number1: 13,
+    number2: 23,
+    number3: 26,
+    number4: 31,
+    number5: 35,
+    number6: 43,
+    bonusNumber: 15,
+  },
+  {
     id: 981,
     round: 982,
     date: "2021-09-25",

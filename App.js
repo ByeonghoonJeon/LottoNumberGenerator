@@ -9,8 +9,8 @@ import {
   faQuestionCircle,
   faCheckSquare,
   faHome,
-  faLaughBeam,
   faTrophy,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import About from "./components/AboutComponent";
 import Numbers from "./components/NumbersComponent";
@@ -81,6 +81,21 @@ function WinnersScreen() {
   );
 }
 
+function NumbersScreen() {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#232323",
+      }}
+    >
+      <Numbers />
+    </View>
+  );
+}
+
 const Tab = createBottomTabNavigator();
 
 function HomeTabs() {
@@ -94,9 +109,9 @@ function HomeTabs() {
             let size;
 
             if (route.name === "나만의 번호") {
-              iconName = focused ? faCheckSquare : faLaughBeam;
+              iconName = focused ? faCheckSquare : faUserCircle;
               color = focused ? "#CE1212" : "black";
-              size = focused ? 25 : 30;
+              size = focused ? 25 : 25;
             } else if (route.name === "사주로또") {
               iconName = focused ? faCheckSquare : faHome;
               color = focused ? "#CE1212" : "black";

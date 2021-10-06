@@ -110,7 +110,7 @@ class Numbers extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView style={{ backgroundColor: "#232323" }}>
         <Animatable.View animation="fadeInRightBig" duration={1000}>
           <RenderItem
             item={this.state.history[this.props.route.params.id]}
