@@ -61,7 +61,6 @@ function RenderItem({ item, onPress }) {
           title="  전체 번호 확인하기"
           onPress={onPress}
         />
-        {/* <Card.Image source={numberImage} style={{ width: 50, height: 50 }} /> */}
       </Card>
     );
   }
