@@ -82,7 +82,7 @@ function WinnersScreen(props) {
   );
 }
 
-function NumbersScreen() {
+function NumbersScreen(props) {
   return (
     <View
       style={{
@@ -92,7 +92,7 @@ function NumbersScreen() {
         backgroundColor: "#232323",
       }}
     >
-      <Numbers />
+      <Numbers {...props} />
     </View>
   );
 }
@@ -142,6 +142,7 @@ function HomeTabs() {
         <Tab.Screen name="사주 로또란?" component={AboutScreen} />
         <Tab.Screen name="나만의 번호" component={PurchaseScreen} />
         <Tab.Screen name="당첨현황" component={WinnersScreen} />
+        <Tab.Screen name="Numbers" component={NumbersScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

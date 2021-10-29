@@ -28,7 +28,18 @@ function RenderItem({ item, onPress }) {
         <Text style={{ marginBottom: 10, marginTop: 10, color: "white" }}>
           누적 당첨자
         </Text>
-        <Card item={WINNERS[0]} horizontal />
+        <Card
+          containerStyle={{
+            backgroundColor: "#2B2B2B",
+            borderColor: "#2B2B2B",
+            shadowColor: "black",
+          }}
+        >
+          <Card.Image
+            source={require("../assets/5th.jpg")}
+            containerStyle={{ length: 4 }}
+          />
+        </Card>
 
         <Button
           icon={<FontAwesomeIcon icon={iconName} color="#ffffff" />}
